@@ -1,81 +1,23 @@
 from django.http import HttpResponse
-from selenium import webdriver
-import time
+from urllib.request import urlopen
 
-def detail(request):
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    # open it, go to a website, and get results
-    driver = webdriver.Chrome('chromedriver', options=options)
-    driver.get("https://merchant-uk.hungrypanda.co/login")
-    btn_username = driver.find_element('id', "phone")  # 定位账号标签
-    btn_username.send_keys('7859999838')  # 填充账号
-    btn_password = driver.find_element('id', "password")  # 定位密码标签
-    btn_password.send_keys('Mql654321')  # 填充密码
 
-    btn_login = driver.find_element('xpath',
-                                    "html/body/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form/div[5]/div[1]/div[1]/div[1]/button")
-    btn_login.click()  # 点击登录按钮
-    time.sleep(1)
-    driver.get("https://merchant-uk.hungrypanda.co/order/ordermanage")
-    time.sleep(1)
-    view_btn = driver.find_element('xpath',
-                                   'html/body/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table/tbody/tr[1]/td[6]/a')
-    view_btn.click()
-    time.sleep(1)
-    order = driver.find_element('xpath', 'html/body/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]')
-    return HttpResponse(order.text)
+def version(request):
+    version = "1.0"
+    return HttpResponse(version)
 
-def id(request):
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    # open it, go to a website, and get results
-    driver = webdriver.Chrome('chromedriver', options=options)
-    driver.get("https://merchant-uk.hungrypanda.co/login")
-    btn_username = driver.find_element('id', "phone")  # 定位账号标签
-    btn_username.send_keys('7859999838')  # 填充账号
-    btn_password = driver.find_element('id', "password")  # 定位密码标签
-    btn_password.send_keys('Mql654321')  # 填充密码
+def valid(request):
+    #if request.method == 'GET':
+    #   return HttpResponse("Please use POST request")
+    #data = json.loads(request.body.decode('utf-8'))
+    #books=Book.objects.raw("select * from index_book")
+    pass
 
-    btn_login = driver.find_element('xpath',
-                                    "html/body/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form/div[5]/div[1]/div[1]/div[1]/button")
-    btn_login.click()  # 点击登录按钮
-    time.sleep(1)
-    driver.get("https://merchant-uk.hungrypanda.co/order/ordermanage")
-    time.sleep(1)
-    view_btn = driver.find_element('xpath',
-                                   'html/body/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table/tbody/tr[1]/td[6]/a')
-    view_btn.click()
-    time.sleep(1)
-    order = driver.find_element('xpath', 'html/body/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]')
-    return HttpResponse(order.text)
+def amazon(request):
+    return HttpResponse(urlopen('https://www.amazon.co.jp/s?k=%E3%81%BB%E3%81%BC%E6%97%A5+weeks&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&crid=3OU2NRJEPQ6&sprefix=%E3%81%BB%E3%81%BC%E6%97%A5+weeks%2Caps%2C283&ref=nb_sb_noss_1'))
 
-def menu(request):
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    # open it, go to a website, and get results
-    driver = webdriver.Chrome('chromedriver', options=options)
-    driver.get("https://merchant-uk.hungrypanda.co/login")
-    btn_username = driver.find_element('id', "phone")  # 定位账号标签
-    btn_username.send_keys('7859999838')  # 填充账号
-    btn_password = driver.find_element('id', "password")  # 定位密码标签
-    btn_password.send_keys('Mql654321')  # 填充密码
+def amazon1(request):
+    return HttpResponse(urlopen('https://www.amazon.co.jp/s?k=%E3%81%BB%E3%81%BC%E6%97%A5+%E3%81%86%E3%81%95%E3%81%8E&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&crid=IEL36LK8I5TC&sprefix=%E3%81%BB%E3%81%BC%E6%97%A5+hon%2Caps%2C630&ref=nb_sb_noss_1'))
 
-    btn_login = driver.find_element('xpath',
-                                    "html/body/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form/div[5]/div[1]/div[1]/div[1]/button")
-    btn_login.click()  # 点击登录按钮
-    time.sleep(1)
-    driver.get("https://merchant-uk.hungrypanda.co/order/ordermanage")
-    time.sleep(1)
-    view_btn = driver.find_element('xpath',
-                                   'html/body/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table/tbody/tr[1]/td[6]/a')
-    view_btn.click()
-    time.sleep(1)
-    order = driver.find_element('xpath', 'html/body/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]')
-    return HttpResponse(order.text)
+def amazon2(request):
+    return HttpResponse(urlopen('https://www.amazon.co.jp/s?k=%E3%81%BB%E3%81%BC%E6%97%A5+hon&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&crid=123RAKJAXVK6A&sprefix=%E3%81%BB%E3%81%BC%E6%97%A5+ho%2Caps%2C298&ref=nb_sb_noss_2'))

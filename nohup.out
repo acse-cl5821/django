@@ -1,0 +1,2692 @@
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/resolvers.py", line 283, in _route_to_regex
+    converter = get_converter(raw_converter)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/converters.py", line 66, in get_converter
+    return get_converters()[raw_converter]
+KeyError: 'string'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/management/base.py", line 475, in check
+    all_issues = checks.run_checks(
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/djangoproject/django/ebdjango/urls.py", line 26, in <module>
+    path('validate/', include('validate.urls')),
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/djangoproject/django/validate/urls.py", line 7, in <module>
+    path('<string:BranchID>/<string:MerchID>', views.topup),
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/conf.py", line 80, in _path
+    pattern = Pattern(route, name=name, is_endpoint=True)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/resolvers.py", line 304, in __init__
+    self.converters = _route_to_regex(str(route), is_endpoint)[1]
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/urls/resolvers.py", line 285, in _route_to_regex
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: URL route '<string:BranchID>/<string:MerchID>' uses invalid converter 'string'.
+Performing system checks...
+
+Watching for file changes with StatReloader
+[20/Feb/2023 14:54:14] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 14:54:14] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 14:54:14] "POST /validate/validate HTTP/1.1" 200 193
+/root/djangoproject/django/validate/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): validate.
+Run 'python manage.py migrate' to apply them.
+February 20, 2023 - 14:54:07
+Django version 4.1.3, using settings 'ebdjango.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/djangoproject/django/validate/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): validate.
+Run 'python manage.py migrate' to apply them.
+February 20, 2023 - 14:57:29
+Django version 4.1.3, using settings 'ebdjango.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /validate/
+[20/Feb/2023 14:58:07] "GET /validate/ HTTP/1.1" 404 3423
+[20/Feb/2023 14:58:12] "GET /validate/test HTTP/1.1" 200 0
+Not Found: /validate/test/test
+[20/Feb/2023 14:58:16] "GET /validate/test/test HTTP/1.1" 404 3450
+Internal Server Error: /validate/test/test/UberEats/2
+Traceback (most recent call last):
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/django/validate/views.py", line 66, in topup
+    obj = Validate.objects.get(MerchID = data['MerchID'], BranchID = data['BranchID'])
+NameError: name 'data' is not defined
+[20/Feb/2023 14:58:25] "GET /validate/test/test/UberEats/2 HTTP/1.1" 500 60000
+/root/djangoproject/django/validate/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): validate.
+Run 'python manage.py migrate' to apply them.
+February 20, 2023 - 14:58:00
+Django version 4.1.3, using settings 'ebdjango.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/djangoproject/django/validate/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): validate.
+Run 'python manage.py migrate' to apply them.
+February 20, 2023 - 14:59:04
+Django version 4.1.3, using settings 'ebdjango.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Internal Server Error: /validate/test/test/UberEats/2
+Traceback (most recent call last):
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/django/validate/views.py", line 87, in topup
+    return HttpReponse('Successfully Top Up!')
+NameError: name 'HttpReponse' is not defined
+[20/Feb/2023 14:59:57] "GET /validate/test/test/UberEats/2 HTTP/1.1" 500 59630
+/root/djangoproject/django/validate/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): validate.
+Run 'python manage.py migrate' to apply them.
+February 20, 2023 - 14:59:56
+Django version 4.1.3, using settings 'ebdjango.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[20/Feb/2023 15:00:23] "GET /validate/test/test/UberEats/2 HTTP/1.1" 200 20
+[20/Feb/2023 15:00:38] "GET /validate/test/test/UberEats/2 HTTP/1.1" 200 20
+[20/Feb/2023 15:04:50] "GET /validate/test/test/ft/1 HTTP/1.1" 200 20
+Not Found: /favicon.ico
+[20/Feb/2023 15:04:51] "GET /favicon.ico HTTP/1.1" 404 2978
+[20/Feb/2023 15:06:51] "GET /validate/test/test/ft/1 HTTP/1.1" 200 20
+Internal Server Error: /validate/imenus/mqlhb/dr/1
+Traceback (most recent call last):
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/django/validate/views.py", line 66, in topup
+    obj = Validate.objects.get(MerchID = MerchID, BranchID = BranchID)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+validate.models.Validate.DoesNotExist: Validate matching query does not exist.
+[20/Feb/2023 15:07:48] "GET /validate/imenus/mqlhb/dr/1 HTTP/1.1" 500 68555
+Internal Server Error: /validate/imenus/mqlhb/Deliveroo/1
+Traceback (most recent call last):
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/django/validate/views.py", line 66, in topup
+    obj = Validate.objects.get(MerchID = MerchID, BranchID = BranchID)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+validate.models.Validate.DoesNotExist: Validate matching query does not exist.
+[20/Feb/2023 15:08:45] "GET /validate/imenus/mqlhb/Deliveroo/1 HTTP/1.1" 500 68639
+/root/djangoproject/django/validate/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): validate.
+Run 'python manage.py migrate' to apply them.
+February 20, 2023 - 15:00:23
+Django version 4.1.3, using settings 'ebdjango.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/djangoproject/django/validate/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): validate.
+Run 'python manage.py migrate' to apply them.
+February 20, 2023 - 15:09:38
+Django version 4.1.3, using settings 'ebdjango.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[20/Feb/2023 15:10:01] "GET /validate/imenus/mqlhb/Deliveroo/1 HTTP/1.1" 200 20
+[20/Feb/2023 15:13:09] "GET /validate/imenus/mqlhb/HungryPanda/1 HTTP/1.1" 200 20
+[20/Feb/2023 15:13:36] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 15:14:29] "GET /validate/test/test/HungryPanda/1 HTTP/1.1" 200 20
+[20/Feb/2023 15:19:57] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 15:20:00] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 15:20:04] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 15:20:05] "POST /validate/validate HTTP/1.1" 200 193
+/root/djangoproject/django/validate/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): validate.
+Run 'python manage.py migrate' to apply them.
+February 20, 2023 - 15:09:53
+Django version 4.1.3, using settings 'ebdjango.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[20/Feb/2023 15:34:39] "GET /validate/test/test/HungryPanda/1 HTTP/1.1" 302 0
+[20/Feb/2023 15:35:43] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00{\x01\x00\x00w\x03\x03MÐ5²'òe:\x08¶í-;èK^Ô\x96yU\x01ª½}~pxý1Éí»\x00\x00\x1aÀ/À+À\x11À\x07À\x13À")
+[20/Feb/2023 15:35:43] You're accessing the development server over HTTPS, but it only supports HTTP.
+[20/Feb/2023 15:38:10] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 15:38:15] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 15:38:39] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 15:39:25] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 15:57:04] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 15:57:21] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 15:57:54] "GET /validate/test/test/HungryPanda/1 HTTP/1.1" 302 0
+[20/Feb/2023 15:57:59] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 15:58:05] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 15:58:51] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 15:59:59] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 16:00:08] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:00:12] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:01:01] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:01:06] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:03:07] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:03:29] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:04:00] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 16:04:09] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:05:37] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:05:46] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:05:55] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:24:42] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:24:52] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 16:25:02] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:25:13] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:25:24] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:25:37] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:28:55] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:29:53] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:29:53] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:29:53] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:32:25] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:32:25] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:32:25] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:33:08] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:33:08] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:33:08] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:33:34] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:33:34] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:33:34] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:35:53] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:35:53] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:35:53] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:36:14] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:36:14] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:36:15] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:36:40] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:36:41] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:36:41] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:37:29] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:37:29] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:37:29] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:38:04] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:38:04] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:38:04] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:39:56] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 16:39:56] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 16:39:57] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:43:24] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:43:31] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 16:43:35] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 16:43:46] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 16:43:49] "POST /validate/validate HTTP/1.1" 200 193
+Internal Server Error: /validate/validate
+Traceback (most recent call last):
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/django/validate/views.py", line 13, in val
+    data = json.loads(request.body.decode('utf-8'))
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[20/Feb/2023 16:53:00] "GET /validate/validate HTTP/1.1" 500 71166
+Not Found: /validate/
+[20/Feb/2023 16:53:03] "GET /validate/ HTTP/1.1" 404 3263
+Internal Server Error: /validate/123/123/123/12
+Traceback (most recent call last):
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/django/validate/views.py", line 67, in topup
+    obj = Validate.objects.get(MerchID = MerchID, BranchID = BranchID)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/djangoproject/myenv/lib/python3.10/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+validate.models.Validate.DoesNotExist: Validate matching query does not exist.
+[20/Feb/2023 16:53:13] "GET /validate/123/123/123/12 HTTP/1.1" 500 68907
+[20/Feb/2023 17:01:41] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 17:01:41] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 17:01:42] "POST /validate/validate HTTP/1.1" 200 57
+[20/Feb/2023 17:02:47] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 17:02:48] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 17:02:48] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 17:04:53] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 17:04:53] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 17:04:53] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 17:07:35] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 17:12:31] "POST /validate/validate HTTP/1.1" 200 193
+[20/Feb/2023 17:14:17] "GET /validate/test/test/HungryPanda/1 HTTP/1.1" 302 0
+[20/Feb/2023 17:14:22] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 17:15:52] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 17:15:55] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 17:16:44] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 17:17:27] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 17:35:09] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 17:35:10] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 17:35:10] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 17:38:03] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 17:38:03] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 17:38:03] "POST /validate/validate HTTP/1.1" 200 219
+[20/Feb/2023 17:43:57] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 17:43:57] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 17:43:57] "POST /validate/validate HTTP/1.1" 200 219
+Not Found: /
+[20/Feb/2023 17:54:04] "GET / HTTP/1.1" 404 2927
+[20/Feb/2023 18:49:48] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 18:49:48] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 18:49:49] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 19:17:07] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 19:17:08] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 19:17:08] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 19:19:22] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 19:19:22] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 19:19:23] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 19:45:55] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 19:45:55] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 19:45:55] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 19:54:22] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 19:54:22] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 19:54:22] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 20:03:04] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 20:03:04] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 20:03:04] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 20:07:46] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 20:07:46] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 20:07:46] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 22:14:58] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 22:14:59] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 22:14:59] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 22:21:28] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 22:21:28] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 22:21:28] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 22:36:30] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 22:36:30] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 22:36:30] "POST /validate/validate HTTP/1.1" 200 218
+[20/Feb/2023 23:14:23] "GET /version HTTP/1.1" 301 0
+[20/Feb/2023 23:14:23] "GET /version/ HTTP/1.1" 200 3
+[20/Feb/2023 23:14:24] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 00:05:35] code 400, message Bad request syntax ('MGLNDD_13.42.103.118_8000')
+[21/Feb/2023 00:05:35] "MGLNDD_13.42.103.118_8000" 400 -
+Not Found: /
+[21/Feb/2023 00:37:48] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 03:23:43] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+[21/Feb/2023 03:23:43] "  ,'à     Cookie: mstshash=Domain" 400 -
+[21/Feb/2023 03:23:44] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+[21/Feb/2023 03:23:44] "  ,'à     Cookie: mstshash=Domain" 400 -
+[21/Feb/2023 03:28:26] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 03:28:26] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 03:28:26] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 03:29:25] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 03:29:25] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 03:29:26] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 03:31:14] code 400, message Bad HTTP/0.9 request type ('{"id":1,"method":"mining.subscribe","params":["EWBF')
+[21/Feb/2023 03:31:14] "{"id":1,"method":"mining.subscribe","params":["EWBF 0.3.4b",null,"cn1-zcash.flypool.org","3333"]}" 400 -
+[21/Feb/2023 03:31:14] code 400, message Bad request version ('gcc/8.3.0","algo":["cn","cn/r","cn/wow","cn/2","cn/1","cn/0","cn/half","cn/xtl","cn/msr","cn/xao","cn/rto","cn/gpu","cn/rwz","cn/zls","cn/double"]}}')
+[21/Feb/2023 03:31:14] "{"id":1,"jsonrpc":"2.0","method":"login","params":{"login":"49pV1fn35WVQGQWgdVNRzN8MHXKRrXyubPt9PBCwypiNfX2z1t41dS7gg3F1Uq6GfBDr49g8Dcp3aao2GS18MA6fBuCyVwF","pass":"x","agent":"XMRig/2.14.4 (Windows NT 6.1; Win64; x64) libuv/1.29.1 gcc/8.3.0","algo":["cn","cn/r","cn/wow","cn/2","cn/1","cn/0","cn/half","cn/xtl","cn/msr","cn/xao","cn/rto","cn/gpu","cn/rwz","cn/zls","cn/double"]}}" 400 -
+[21/Feb/2023 03:31:15] code 400, message Bad request syntax ('{"compact":true,"id":1,"method":"eth_getWork","params":[],"worker":"default"}')
+[21/Feb/2023 03:31:15] "{"compact":true,"id":1,"method":"eth_getWork","params":[],"worker":"default"}" 400 -
+[21/Feb/2023 03:31:21] code 400, message Bad request version ('["cgminer/3.7.2"]}')
+[21/Feb/2023 03:31:21] "{"id": 0, "method": "mining.subscribe", "params": ["cgminer/3.7.2"]}" 400 -
+[21/Feb/2023 03:31:21] code 400, message Bad HTTP/0.9 request type ('{"id":1,"jsonrpc":"2.0","method":"eth_submitLogin","worker":"lolMinerWorker","params":["0x155da78b788ab54bea1340c10a5422a8ae88142f",')
+[21/Feb/2023 03:31:21] "{"id":1,"jsonrpc":"2.0","method":"eth_submitLogin","worker":"lolMinerWorker","params":["0x155da78b788ab54bea1340c10a5422a8ae88142f", "x"]} " 400 -
+[21/Feb/2023 03:31:23] code 400, message Bad request version ('msvc/2019","algo":["cn/1","cn/2","cn/r","cn/fast","cn/half","cn/xao","cn/rto","cn/rwz","cn/zls","cn/double","cn/ccx","cn-lite/1","cn-heavy/0","cn-heavy/tube","cn-heavy/xhv","cn-pico","cn-pico/tlo","cn/upx2","rx/0","rx/wow","rx/arq","rx/graft","rx/sfx","rx/keva","argon2/chukwa","argon2/chukwav2","argon2/ninja","astrobwt","ghostrider"]}}')
+[21/Feb/2023 03:31:23] "{"id":1,"jsonrpc":"2.0","method":"login","params":{"login":"42pFDFzXPF8FRMrzMktS6dXuHx21uY6Z1HknFR5j3aGZVMubwzWePdQd1p2J9goMrDG3Vz2ToMKsbR8rxuGr3d769N17cLJ","pass":"x","agent":"XMRig/6.16.2 (Windows NT 10.0; Win64; x64) libuv/1.42.0 msvc/2019","algo":["cn/1","cn/2","cn/r","cn/fast","cn/half","cn/xao","cn/rto","cn/rwz","cn/zls","cn/double","cn/ccx","cn-lite/1","cn-heavy/0","cn-heavy/tube","cn-heavy/xhv","cn-pico","cn-pico/tlo","cn/upx2","rx/0","rx/wow","rx/arq","rx/graft","rx/sfx","rx/keva","argon2/chukwa","argon2/chukwav2","argon2/ninja","astrobwt","ghostrider"]}}" 400 -
+[21/Feb/2023 03:32:43] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 03:32:43] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 03:32:44] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 03:33:03] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 03:33:03] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 03:33:04] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 03:33:45] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 03:33:46] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 03:33:46] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 03:35:20] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 03:35:20] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 03:35:20] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 04:03:23] code 400, message Bad request version ('À\x14À')
+[21/Feb/2023 04:03:23] You're accessing the development server over HTTPS, but it only supports HTTP.
+[21/Feb/2023 04:03:23] code 400, message Bad request version ('À\x14À')
+[21/Feb/2023 04:03:23] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[21/Feb/2023 04:03:24] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 04:03:24] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x92-§"Ôa¿8¸°&¹\\>¹{ì¸Húé\x00ÛæÙdI°+\x11\x18´\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[21/Feb/2023 04:03:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /api/islogged
+[21/Feb/2023 04:03:24] "GET /api/islogged HTTP/1.1" 404 2981
+Not Found: /
+[21/Feb/2023 04:25:23] "GET / HTTP/1.1" 404 2927
+Not Found: /http:/api.ipify.org/
+[21/Feb/2023 04:25:39] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1818
+Not Found: /www.shadowserver.org:443
+[21/Feb/2023 04:25:42] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1827
+[21/Feb/2023 05:16:58,661] - Broken pipe from ('167.94.138.120', 36612)
+Not Found: /
+[21/Feb/2023 05:16:59] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 05:16:59,836] - Broken pipe from ('167.94.138.120', 45102)
+Not Found: /
+[21/Feb/2023 05:16:59] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 05:17:00] code 505, message Invalid HTTP version (2.0)
+[21/Feb/2023 05:17:00] "PRI * HTTP/2.0" 505 -
+[21/Feb/2023 06:55:30] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[21/Feb/2023 06:55:30] "  /*à     Cookie: mstshash=Administr" 400 -
+Not Found: /
+[21/Feb/2023 07:11:57] "GET / HTTP/1.1" 404 2927
+Not Found: /
+[21/Feb/2023 09:43:41] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 09:49:23] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 09:49:24] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 09:49:24] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 10:50:17] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 10:50:17] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 10:50:17] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 10:58:45] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 10:58:45] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 10:58:45] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 11:01:58] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 11:01:59] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 11:01:59] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 11:07:30] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 11:07:30] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 11:07:31] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 11:09:40] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 11:09:40] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 11:09:40] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 11:12:50] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 11:12:50] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 11:12:50] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 11:13:21] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 11:13:21] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 11:13:21] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 11:14:12] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 11:14:12] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 11:14:12] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 11:15:40] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 11:15:40] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 11:15:41] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 11:47:43] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 11:47:43] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 11:47:44] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 12:09:52,707] - Broken pipe from ('167.248.133.118', 56102)
+Not Found: /
+[21/Feb/2023 12:09:53] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 12:09:54,004] - Broken pipe from ('167.248.133.118', 60826)
+Not Found: /
+[21/Feb/2023 12:09:54] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 12:09:54] code 505, message Invalid HTTP version (2.0)
+[21/Feb/2023 12:09:54] "PRI * HTTP/2.0" 505 -
+[21/Feb/2023 13:06:09] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 13:06:09] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 13:06:09] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 13:10:38] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 13:10:38] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 13:10:38] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 13:14:15] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 13:14:15] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 13:14:16] "POST /validate/validate HTTP/1.1" 200 218
+Not Found: /
+[21/Feb/2023 13:19:41] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 13:24:18] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 13:24:18] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 13:24:18] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 13:24:50] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 13:24:50] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 13:24:50] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 13:34:56] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 13:34:56] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 13:34:56] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 14:34:31] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 14:34:31] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 14:34:31] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 14:52:12] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 14:52:12] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 14:52:13] "POST /validate/validate HTTP/1.1" 200 219
+[21/Feb/2023 15:25:50] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 15:29:22] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 15:30:30] "POST /validate/validate HTTP/1.1" 200 218
+Not Found: /
+[21/Feb/2023 15:30:39] "GET / HTTP/1.1" 404 2927
+[21/Feb/2023 15:31:16] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 15:38:09] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 15:38:31] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 15:40:58] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 15:41:22] "POST /validate/validate HTTP/1.1" 200 218
+[21/Feb/2023 15:41:39] "POST /validate/validate HTTP/1.1" 200 219
+[21/Feb/2023 15:41:42] "POST /validate/validate HTTP/1.1" 200 219
+[21/Feb/2023 15:42:40] "POST /validate/validate HTTP/1.1" 200 193
+[21/Feb/2023 15:43:27] "POST /validate/validate HTTP/1.1" 200 193
+[21/Feb/2023 15:43:49] "POST /validate/validate HTTP/1.1" 200 193
+[21/Feb/2023 15:43:58] "POST /validate/validate HTTP/1.1" 200 193
+[21/Feb/2023 22:00:04] "GET /version HTTP/1.1" 301 0
+[21/Feb/2023 22:00:04] "GET /version/ HTTP/1.1" 200 3
+[21/Feb/2023 22:00:04] "POST /validate/validate HTTP/1.1" 200 218
+[22/Feb/2023 01:38:04,108] - Broken pipe from ('45.93.201.66', 4304)
+[22/Feb/2023 01:38:04] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+[22/Feb/2023 01:38:04] "  ,'à     Cookie: mstshash=Domain" 400 -
+[22/Feb/2023 01:38:04] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+[22/Feb/2023 01:38:04] "  ,'à     Cookie: mstshash=Domain" 400 -
+Not Found: /
+[22/Feb/2023 01:54:59] "GET / HTTP/1.1" 404 2927
+Not Found: /http:/api.ipify.org/
+[22/Feb/2023 01:55:25] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1818
+Not Found: /www.shadowserver.org:443
+[22/Feb/2023 01:55:28] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1827
+[22/Feb/2023 03:50:34] code 400, message Bad request syntax ('MGLNDD_13.42.103.118_8000')
+[22/Feb/2023 03:50:34] "MGLNDD_13.42.103.118_8000" 400 -
+Not Found: /
+[22/Feb/2023 07:24:31] "GET / HTTP/1.1" 404 2922
+[22/Feb/2023 07:24:32,170] - Broken pipe from ('152.32.141.80', 49550)
+[22/Feb/2023 07:24:32] code 400, message Bad request version ('À\x13À')
+[22/Feb/2023 07:24:32] You're accessing the development server over HTTPS, but it only supports HTTP.
+[22/Feb/2023 10:16:33] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 10:16:33] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 10:16:33] "POST /validate/validate HTTP/1.1" 200 218
+[22/Feb/2023 10:35:24] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03VÄ\x8bÆ]X\x96ÍT\x8c}*¬÷z$ý\x161\x06ùòôYp\x10àUÃ\x9aiÕ\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[22/Feb/2023 10:35:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[22/Feb/2023 10:35:24] code 400, message Bad request version ('À\x14À')
+[22/Feb/2023 10:35:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[22/Feb/2023 10:35:24] "GET / HTTP/1.1" 404 2927
+[22/Feb/2023 10:35:24] code 400, message Bad request version ('À\x14À')
+[22/Feb/2023 10:35:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /api/islogged
+[22/Feb/2023 10:35:24] "GET /api/islogged HTTP/1.1" 404 2981
+[22/Feb/2023 10:45:12] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 10:45:12] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 10:45:12] "POST /validate/validate HTTP/1.1" 200 218
+[22/Feb/2023 11:00:50] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 11:00:51] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 11:00:51] "POST /validate/validate HTTP/1.1" 200 218
+[22/Feb/2023 11:10:04] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 11:10:04] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 11:10:04] "POST /validate/validate HTTP/1.1" 200 218
+[22/Feb/2023 12:57:27] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 12:57:28] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 12:57:28] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 12:57:44] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 12:57:44] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 12:57:44] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:00:41] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:00:42] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:00:42] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:01:14] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:01:15] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:01:15] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:01:51] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:01:51] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:01:51] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:02:42] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:02:42] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:02:42] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:02:54] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:02:54] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:02:54] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:02:59] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:02:59] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:03:00] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:03:03] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:03:03] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:03:03] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:03:18] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:03:18] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:03:18] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:03:26] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:03:27] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:03:27] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:04:15] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:04:15] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:04:15] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:26:52] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:26:52] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:26:52] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:27:27] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:27:27] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:27:27] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:27:56] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:27:56] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:27:57] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:28:56] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:28:56] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:28:56] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:29:11] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:29:11] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:29:11] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:40:59] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:40:59] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:40:59] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:41:18] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:41:19] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:41:19] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:41:24] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:41:25] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:41:25] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:48:48] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:48:48] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:48:48] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:48:59] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:48:59] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:48:59] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:49:57] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:49:57] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:49:57] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:51:08] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:51:08] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:51:08] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:54:35] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:54:35] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:54:35] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 13:54:48] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 13:54:48] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 13:54:48] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 14:43:51] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[22/Feb/2023 14:43:51] "    c                           " 400 -
+[22/Feb/2023 15:59:37] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x8e5\x9a.ÄU\x8e?ËDH\x97º@ð¶}Íõÿ`ì<Q÷Þb¨\x88v\x11>\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[22/Feb/2023 15:59:37] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[22/Feb/2023 18:17:15] "GET / HTTP/1.1" 404 2927
+[22/Feb/2023 18:51:16,225] - Broken pipe from ('167.94.138.119', 33400)
+Not Found: /
+[22/Feb/2023 18:51:17] "GET / HTTP/1.1" 404 2927
+[22/Feb/2023 18:51:17,408] - Broken pipe from ('167.94.138.119', 60146)
+Not Found: /
+[22/Feb/2023 18:51:17] "GET / HTTP/1.1" 404 2927
+[22/Feb/2023 18:51:17] code 505, message Invalid HTTP version (2.0)
+[22/Feb/2023 18:51:17] "PRI * HTTP/2.0" 505 -
+[22/Feb/2023 19:31:39] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:31:39] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:31:39] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:33:28] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:33:28] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:33:29] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:33:46] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:33:46] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:33:46] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:35:54] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:35:54] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:35:54] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:36:57] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:36:57] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:36:57] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:37:04] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:37:04] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:37:04] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:37:12] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:37:12] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:37:12] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:37:24] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:37:24] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:37:25] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:37:29] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:37:29] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:37:30] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:37:51] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:37:51] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:37:51] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:38:23] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:38:23] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:38:23] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:38:52] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:38:52] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:38:52] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:38:59] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:38:59] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:39:00] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:41:14] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:41:14] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:41:14] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:41:22] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:41:22] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:41:22] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:41:58] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:41:58] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:41:58] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:42:24] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:42:24] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:42:25] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:42:50] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:42:50] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:42:50] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:42:57] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:42:57] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:42:58] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 19:43:06] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 19:43:06] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 19:43:06] "POST /validate/validate HTTP/1.1" 200 193
+Not Found: /
+[22/Feb/2023 22:02:29] "GET / HTTP/1.1" 404 2927
+Not Found: /favicon.ico
+[22/Feb/2023 22:02:30] "GET /favicon.ico HTTP/1.1" 404 2978
+Not Found: /sitemap.xml
+[22/Feb/2023 22:02:31] "GET /sitemap.xml HTTP/1.1" 404 2978
+Not Found: /robots.txt
+[22/Feb/2023 22:02:31] "GET /robots.txt HTTP/1.1" 404 2975
+Not Found: /.git/config
+[22/Feb/2023 22:15:52] "GET /.git/config HTTP/1.1" 404 2978
+Not Found: /demo/.git/config
+[22/Feb/2023 22:15:52] "GET /demo/.git/config HTTP/1.1" 404 2993
+Not Found: /dev/.git/config
+[22/Feb/2023 22:15:53] "GET /dev/.git/config HTTP/1.1" 404 2990
+Not Found: /web/.git/config
+[22/Feb/2023 22:15:53] "GET /web/.git/config HTTP/1.1" 404 2990
+Not Found: /api/.git/config
+[22/Feb/2023 22:15:53] "GET /api/.git/config HTTP/1.1" 404 2990
+[22/Feb/2023 22:15:53] "GET /admin/.git/config HTTP/1.1" 302 0
+[22/Feb/2023 22:15:53] "GET /admin/login/?next=/admin/.git/config HTTP/1.1" 200 2240
+Not Found: /app/.git/config
+[22/Feb/2023 22:15:54] "GET /app/.git/config HTTP/1.1" 404 2990
+[22/Feb/2023 23:13:37] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:13:37] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:13:37] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:13:44] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:13:44] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:13:44] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:14:01] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:14:01] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:14:01] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:14:28] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:14:28] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:14:29] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:15:19] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:15:19] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:15:19] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:15:26] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:15:27] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:15:27] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:16:09] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:16:09] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:16:10] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:16:38] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:16:38] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:16:39] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:16:54] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:16:54] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:16:54] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:17:09] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:17:09] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:17:09] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:17:34] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:17:34] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:17:34] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:18:08] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:18:08] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:18:08] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:19:06] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:19:06] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:19:06] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:19:45] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:19:45] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:19:45] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:20:11] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:20:11] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:20:11] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:20:24] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:20:24] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:20:24] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:20:30] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:20:30] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:20:30] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:20:43] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:20:43] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:20:43] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:20:47] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:20:47] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:20:47] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:22:00] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:22:00] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:22:00] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:22:06] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:22:06] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:22:06] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:22:38] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:22:38] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:22:38] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:23:14] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:23:14] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:23:14] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:23:57] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:23:57] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:23:57] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:24:11] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:24:11] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:24:11] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:24:46] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:24:46] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:24:46] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:25:23] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:25:23] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:25:23] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:25:33] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:25:33] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:25:33] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:25:46] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:25:46] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:25:46] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:26:05] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:26:05] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:26:05] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:26:25] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:26:25] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:26:25] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:26:34] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:26:34] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:26:34] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:26:45] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:26:45] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:26:45] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:27:56] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:27:56] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:27:56] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:34:18] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:34:18] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:34:18] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:34:23] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:34:23] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:34:23] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:34:38] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:34:38] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:34:38] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:34:48] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:34:48] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:34:48] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:34:56] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:34:56] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:34:56] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:35:48] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:35:49] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:35:49] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:35:55] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:35:55] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:35:55] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:35:59] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:35:59] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:35:59] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:36:03] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:36:03] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:36:04] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:36:10] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:36:10] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:36:10] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:36:17] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:36:18] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:36:18] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:36:22] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:36:22] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:36:22] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:36:29] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:36:29] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:36:29] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:38:42] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:38:42] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:38:42] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:38:49] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:38:49] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:38:49] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:38:58] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:38:58] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:38:59] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:40:01] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:40:01] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:40:02] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:40:17] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:40:17] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:40:17] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:40:25] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:40:25] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:40:26] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:40:35] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:40:35] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:40:35] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:41:29] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:41:29] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:41:29] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:41:37] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:41:37] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:41:38] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:41:49] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:41:49] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:41:50] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:41:54] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:41:54] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:41:54] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:41:58] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:41:58] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:41:59] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:42:11] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:42:11] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:42:11] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:42:17] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:42:17] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:42:17] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:42:38] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:42:38] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:42:38] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:42:47] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:42:48] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:42:48] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:45:12] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:45:12] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:45:12] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:45:20] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:45:20] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:45:20] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:45:36] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:45:36] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:45:37] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:46:29] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:46:29] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:46:29] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:46:50] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:46:50] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:46:51] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:47:10] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:47:10] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:47:10] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:47:53] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:47:53] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:47:53] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:48:26] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:48:26] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:48:26] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:48:32] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:48:32] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:48:32] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:49:17] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:49:17] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:49:17] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:50:34] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:50:34] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:50:34] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:50:47] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:50:47] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:50:47] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:51:07] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:51:07] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:51:07] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:51:24] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:51:24] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:51:24] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:51:31] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:51:31] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:51:31] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:51:35] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:51:35] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:51:35] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:51:44] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:51:44] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:51:44] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:52:05] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:52:05] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:52:05] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:52:12] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:52:12] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:52:13] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:52:19] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:52:19] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:52:19] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:52:41] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:52:41] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:52:41] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:53:18] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:53:18] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:53:18] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:53:28] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:53:28] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:53:28] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:53:47] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:53:47] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:53:47] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:55:43] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:55:43] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:55:43] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:56:34] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:56:34] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:56:34] "POST /validate/validate HTTP/1.1" 200 193
+[22/Feb/2023 23:56:42] "GET /version HTTP/1.1" 301 0
+[22/Feb/2023 23:56:42] "GET /version/ HTTP/1.1" 200 3
+[22/Feb/2023 23:56:42] "POST /validate/validate HTTP/1.1" 200 193
+Not Found: /
+[23/Feb/2023 00:03:37] "GET / HTTP/1.0" 404 2956
+Not Found: /favicon.ico
+[23/Feb/2023 00:03:38] "GET /favicon.ico HTTP/1.1" 404 2978
+Not Found: /robots.txt
+[23/Feb/2023 00:03:40] "GET /robots.txt HTTP/1.1" 404 2975
+Not Found: /.well-known/security.txt
+[23/Feb/2023 00:03:41] "GET /.well-known/security.txt HTTP/1.1" 404 3017
+[23/Feb/2023 00:03:51] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:03:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:03:51] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:05:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:05:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:05:42] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:06:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:06:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:06:29] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:06:59] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:06:59] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:07:00] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:07:34] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:07:35] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:07:35] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:07:46] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:07:46] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:07:46] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:07:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:07:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:07:53] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:08:09] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:08:09] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:08:09] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:08:22] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:08:22] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:08:22] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:08:48] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:08:48] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:08:48] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:09:07] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:09:07] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:09:07] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:09:38] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:09:38] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:09:39] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:10:23] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:10:23] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:10:23] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:10:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:10:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:10:52] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:11:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:11:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:11:02] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:11:32] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:11:32] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:11:32] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:11:38] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:11:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:11:39] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:12:01] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:12:01] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:12:01] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:12:19] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:12:19] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:12:19] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:12:27] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:12:27] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:12:28] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:12:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:12:38] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:12:38] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:13:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:13:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:13:03] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:13:36] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:13:36] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:13:36] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:14:10] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:14:10] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:14:10] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:14:19] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:14:19] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:14:19] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:15:43] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:15:43] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:15:43] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:16:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:16:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:16:33] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:16:49] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:16:49] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:16:50] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:17:08] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:17:08] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:17:08] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:17:25] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:17:25] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:17:25] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:18:40] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:18:40] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:18:40] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:18:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:18:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:18:52] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:19:05] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:19:05] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:19:05] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:19:19] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:19:19] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:19:19] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:19:51] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:19:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:19:51] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:20:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:20:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:20:03] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:20:12] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:20:12] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:20:12] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:20:22] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:20:22] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:20:22] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:20:47] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:20:47] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:20:47] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:21:17] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:21:17] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:21:17] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:21:22] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:21:22] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:21:22] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:21:48] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:21:48] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:21:48] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 00:22:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 00:22:01] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 00:22:01] "POST /validate/validate HTTP/1.1" 200 193
+Not Found: /
+[23/Feb/2023 02:34:34] "GET / HTTP/1.1" 404 2927
+[23/Feb/2023 03:28:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:28:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:28:00] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:28:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:28:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:28:51] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:28:58] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:28:58] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:28:58] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:29:01] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:29:01] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:29:01] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:29:14] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:29:14] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:29:14] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:29:19] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:29:19] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:29:19] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:29:26] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:29:26] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:29:27] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:29:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:29:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:29:37] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:29:43] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:29:43] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:29:43] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:29:49] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:29:49] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:29:49] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:30:01] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:30:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:30:02] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:33:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:33:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:33:38] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:33:47] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:33:47] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:33:47] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:33:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:33:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:33:52] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:34:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:34:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:34:01] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:34:09] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:34:10] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:34:10] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:34:20] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:34:20] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:34:20] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:34:39] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:34:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:34:39] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:35:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:35:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:35:02] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:35:28] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:35:28] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:35:28] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:35:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:35:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:35:57] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:36:03] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:36:04] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:36:04] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:36:09] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:36:10] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:36:10] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:37:09] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:37:09] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:37:10] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:37:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:37:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:37:33] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:37:47] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:37:47] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:37:47] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:38:06] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:38:06] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:38:06] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:41:39] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:41:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:41:39] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:42:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:42:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:42:56] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:44:07] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:44:07] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:44:07] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:45:13] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:45:13] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:45:13] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:46:04] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:46:04] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:46:04] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:46:21] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:46:21] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:46:21] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:46:30] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:46:30] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:46:30] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:46:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:46:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:46:37] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:46:55] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:46:55] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:46:55] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:47:09] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:47:09] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:47:09] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:50:53] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:50:53] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:50:53] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:51:27] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:51:27] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:51:27] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:52:20] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:52:20] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:52:21] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:52:34] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:52:34] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:52:34] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:53:13] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:53:13] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:53:13] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:53:26] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:53:26] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:53:26] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:53:48] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:53:48] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:53:48] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:54:04] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:54:04] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:54:05] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:54:39] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:54:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:54:39] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:55:26] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:55:27] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:55:27] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 03:57:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 03:57:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 03:57:33] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:04:25] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:04:25] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:04:25] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:05:20] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:05:20] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:05:20] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:06:13] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:06:13] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:06:13] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:07:41] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:07:41] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:07:42] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:10:04] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:10:04] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:10:04] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:13:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:13:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:13:51] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:14:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:14:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:14:51] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:15:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:15:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:15:57] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:16:05] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:16:05] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:16:05] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:17:41] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:17:41] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:17:41] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:18:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:18:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:18:37] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 04:19:44] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 04:19:44] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 04:19:44] "POST /validate/validate HTTP/1.1" 200 193
+Not Found: /
+[23/Feb/2023 04:27:15] "GET / HTTP/1.1" 404 2927
+[23/Feb/2023 07:36:28] code 400, message Bad request syntax ('MGLNDD_13.42.103.118_8000')
+[23/Feb/2023 07:36:28] "MGLNDD_13.42.103.118_8000" 400 -
+[23/Feb/2023 08:21:03] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[23/Feb/2023 08:21:03] "    c                           " 400 -
+[23/Feb/2023 09:43:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 09:43:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 09:43:34] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 11:26:31] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 11:26:31] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 11:26:31] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:32:25] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:32:26] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:32:26] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:47:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:47:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:47:29] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 12:48:53] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:48:53] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:48:53] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:49:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:49:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:49:42] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:50:20] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:50:20] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:50:20] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:50:57] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:50:57] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:50:57] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:52:25] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:52:26] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:52:26] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:53:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:53:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:53:00] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:53:26] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:53:27] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:53:27] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 12:54:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 12:54:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 12:54:42] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:01:26] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:01:26] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:01:27] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:03:59] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:03:59] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:04:00] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:06:16] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:06:16] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:06:17] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:09:30] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:09:30] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:09:30] "POST /validate/validate HTTP/1.1" 200 57
+[23/Feb/2023 13:11:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:11:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:11:29] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:11:30] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:11:30] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:11:30] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:11:54] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:11:54] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:11:54] "POST /validate/validate HTTP/1.1" 200 57
+[23/Feb/2023 13:13:04] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:13:04] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:13:04] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:18:12] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:18:12] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:18:12] "POST /validate/validate HTTP/1.1" 200 57
+[23/Feb/2023 13:18:58] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:18:58] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:18:58] "POST /validate/validate HTTP/1.1" 200 57
+[23/Feb/2023 13:19:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:19:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:19:56] "POST /validate/validate HTTP/1.1" 200 57
+[23/Feb/2023 13:26:18] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:26:18] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:26:19] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:34:23] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:34:23] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:34:23] "POST /validate/validate HTTP/1.1" 200 57
+[23/Feb/2023 13:36:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:36:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:36:52] "POST /validate/validate HTTP/1.1" 200 57
+[23/Feb/2023 13:37:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:37:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:37:56] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:40:10] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:40:11] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:40:11] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:41:22] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:41:22] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:41:22] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:42:47] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:42:47] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:42:47] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:45:11] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:45:11] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:45:11] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:46:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:46:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:46:56] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:50:54] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:50:54] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:50:54] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:51:19] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:51:19] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:51:19] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:51:49] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:51:49] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:51:49] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:51:58] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:51:58] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:51:58] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:52:40] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:52:40] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:52:41] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:52:46] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:52:47] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:52:47] "POST /validate/validate HTTP/1.1" 200 218
+[23/Feb/2023 13:54:12] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 13:54:12] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 13:54:12] "POST /validate/validate HTTP/1.1" 200 193
+Not Found: /
+[23/Feb/2023 14:32:14] "GET / HTTP/1.1" 404 2927
+[23/Feb/2023 17:07:14] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x030Uü?ôE0$Ñ\x88~÷\x1aØÆ1«×Ä¡¦tz\x18iÓ\x11hìSû5\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[23/Feb/2023 17:07:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[23/Feb/2023 17:07:14] code 400, message Bad request version ('À\x14À')
+[23/Feb/2023 17:07:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[23/Feb/2023 17:07:14] "GET / HTTP/1.1" 404 2927
+[23/Feb/2023 17:07:15] code 400, message Bad request version ('À\x14À')
+[23/Feb/2023 17:07:15] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /api/islogged
+[23/Feb/2023 17:07:15] "GET /api/islogged HTTP/1.1" 404 2981
+Not Found: /
+[23/Feb/2023 19:20:59] "GET / HTTP/1.1" 404 2927
+[23/Feb/2023 19:26:49,802] - Broken pipe from ('167.94.146.57', 60612)
+Not Found: /
+[23/Feb/2023 19:26:50] "GET / HTTP/1.1" 404 2927
+[23/Feb/2023 19:26:50,840] - Broken pipe from ('167.94.146.57', 37852)
+Not Found: /
+[23/Feb/2023 19:26:50] "GET / HTTP/1.1" 404 2927
+[23/Feb/2023 19:26:50] code 505, message Invalid HTTP version (2.0)
+[23/Feb/2023 19:26:50] "PRI * HTTP/2.0" 505 -
+[23/Feb/2023 21:02:32] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:02:32] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:02:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:02:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:02:34] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:02:34] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:02:36] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:02:36] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:02:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:02:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:02:38] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:02:38] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:27] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:27] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:27] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:28] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:28] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:28] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:28] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:28] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:28] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:28] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:28] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:28] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:28] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:28] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:30] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:30] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:30] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:30] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:30] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:30] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:30] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:30] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:30] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:30] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:31] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:31] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:31] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:31] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:31] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:31] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:31] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:31] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:31] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:31] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:32] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:32] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:32] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:32] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:32] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:32] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:32] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:32] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:32] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:32] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:33] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:33] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:34] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:34] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:34] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:34] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:34] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:34] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:34] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:34] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:34] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:34] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:35] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:35] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:35] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:35] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:35] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:35] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:35] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:35] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:35] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:35] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:35] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:36] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:36] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:36] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:36] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:36] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:36] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:36] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:36] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:36] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:37] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:37] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:38] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:38] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:38] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:38] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:38] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:38] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:38] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:38] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:38] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:38] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:39] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:39] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:39] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:39] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:39] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:39] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:40] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:40] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:40] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:40] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:40] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:40] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:40] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:40] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:40] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:40] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:41] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:41] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:41] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:41] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:41] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:41] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:41] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:41] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:41] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:41] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:43] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:43] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:43] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:43] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:43] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:43] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:43] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:43] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:43] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:43] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:44] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:44] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:44] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:44] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:44] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:44] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:44] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:44] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:45] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:45] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:45] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:45] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:45] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:45] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:45] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:45] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:46] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:46] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:46] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:46] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:46] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:46] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:46] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:47] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:47] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:47] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:47] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:47] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:47] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:48] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:48] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:48] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:48] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:48] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:48] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:48] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:48] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:49] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:49] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:49] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:49] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:49] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:49] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:49] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:49] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:49] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:49] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:50] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:50] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:50] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:50] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:50] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:51] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:51] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:51] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:51] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:51] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:53] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:53] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:53] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:53] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:53] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:53] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:53] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:53] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:53] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:53] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:54] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:54] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:54] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:54] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:54] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:54] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:54] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:54] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:54] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:55] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:55] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:55] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:55] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:55] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:55] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:55] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:55] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:55] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:55] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:56] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:57] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:57] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:57] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:57] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:57] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:57] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:57] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:57] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:57] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:58] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:58] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:58] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:58] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:58] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:58] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:58] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:58] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:59] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:59] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:59] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:59] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:59] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:59] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:59] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:59] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:04:59] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:04:59] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:01] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:01] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:01] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:01] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:01] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:01] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:01] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:01] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:01] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:01] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:02] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:02] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:03] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:03] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:03] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:03] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:04] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:04] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:04] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:05:22] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:05:22] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:05:22] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:15:27] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:15:27] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:15:27] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:15:52] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:15:52] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:15:53] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:16:42] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:16:42] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:16:42] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:16:53] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:16:53] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:16:53] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:17:20] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:17:20] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:17:21] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:17:59] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:17:59] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:17:59] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:18:11] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:18:11] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:18:11] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:18:16] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:18:16] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:18:17] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:18:32] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:18:32] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:18:33] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:19:00] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:19:00] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:19:00] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:19:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:19:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:19:29] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:19:46] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:19:46] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:19:46] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:19:56] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:19:57] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:19:57] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:20:06] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:20:06] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:20:06] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:20:20] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:20:20] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:20:20] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:20:40] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:20:40] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:20:40] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:20:46] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:20:46] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:20:46] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:23:29] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:23:29] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:23:29] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:23:50] "GET /version HTTP/1.1" 301 0
+[23/Feb/2023 21:23:51] "GET /version/ HTTP/1.1" 200 3
+[23/Feb/2023 21:23:51] "POST /validate/validate HTTP/1.1" 200 193
+[23/Feb/2023 21:34:49] code 400, message Bad request syntax ('SSH-2.0-libssh2_1.10.0')
+[23/Feb/2023 21:34:49] "SSH-2.0-libssh2_1.10.0" 400 -
+Not Found: /
+[23/Feb/2023 23:59:07] "GET / HTTP/1.1" 404 2927
+Not Found: /
+[24/Feb/2023 00:43:20] "GET / HTTP/1.1" 404 2927
+[24/Feb/2023 01:09:58] code 400, message Bad request version ('À\x14À')
+[24/Feb/2023 01:09:58] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[24/Feb/2023 08:10:07] "GET / HTTP/1.1" 404 2927
+Not Found: /http:/api.ipify.org/
+[24/Feb/2023 08:10:21] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1818
+Not Found: /www.shadowserver.org:443
+[24/Feb/2023 08:10:25] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1827
+Not Found: /
+[24/Feb/2023 08:50:58] "GET / HTTP/1.1" 404 2927
+[24/Feb/2023 09:53:53] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 09:53:53] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 09:53:53] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 10:56:46] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 10:56:47] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 10:56:47] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 10:57:45] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 10:57:45] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 10:57:45] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:23:33] code 400, message Bad request syntax ('MGLNDD_13.42.103.118_8000')
+[24/Feb/2023 11:23:33] "MGLNDD_13.42.103.118_8000" 400 -
+[24/Feb/2023 11:33:33] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:33:34] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:33:34] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:39:34] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:39:34] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:39:34] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:42:18] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:42:18] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:42:18] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:46:35] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:46:35] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:46:35] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:47:50] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:47:50] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:47:50] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:49:56] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:49:56] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:49:57] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:53:22] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:53:22] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:53:22] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:53:46] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:53:47] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:53:47] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:55:29] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:55:29] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:55:29] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:59:19] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:59:20] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:59:20] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 11:59:56] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 11:59:57] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 11:59:57] "POST /validate/validate HTTP/1.1" 200 218
+Not Found: /
+[24/Feb/2023 12:01:05] "GET / HTTP/1.1" 404 2927
+Not Found: /
+[24/Feb/2023 12:37:52] "GET / HTTP/1.1" 404 2927
+[24/Feb/2023 14:10:43] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 14:10:43] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 14:10:43] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 14:11:50] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 14:11:50] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 14:11:50] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 14:13:25] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 14:13:25] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 14:13:25] "POST /validate/validate HTTP/1.1" 200 218
+Not Found: /
+[24/Feb/2023 14:45:56] "GET / HTTP/1.1" 404 2927
+[24/Feb/2023 15:51:01] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:51:01] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:51:01] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:51:21] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:51:21] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:51:21] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:51:41] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:51:41] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:51:41] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:52:31] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:52:31] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:52:32] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:52:48] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:52:49] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:52:49] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:54:56] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:54:56] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:54:56] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:55:23] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:55:23] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:55:23] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:55:47] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:55:47] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:55:48] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:56:02] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:56:02] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:56:02] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:56:29] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:56:29] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:56:29] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:56:44] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:56:44] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:56:45] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:57:08] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:57:08] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:57:09] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 15:57:46] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:57:46] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:57:47] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:57:59] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:57:59] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:57:59] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:58:05] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:58:05] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:58:05] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:58:12] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:58:12] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:58:13] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:58:17] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:58:17] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:58:17] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:58:23] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:58:23] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:58:23] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:58:44] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:58:44] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:58:44] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:58:51] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:58:51] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:58:51] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:59:04] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:59:05] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:59:05] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:59:18] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:59:18] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:59:18] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:59:48] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:59:48] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:59:49] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 15:59:54] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 15:59:54] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 15:59:54] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:00:19] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:00:20] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:00:20] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 16:00:42] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:00:43] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:00:43] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 16:00:57] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:00:58] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:00:58] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 16:06:16] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:06:17] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:06:17] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:07:08] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:07:08] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:07:08] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:07:27] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:07:27] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:07:27] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:07:59] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:07:59] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:07:59] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:09:40] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:09:40] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:09:40] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:10:24] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:10:24] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:10:24] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:13:21] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:13:21] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:13:21] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:15:09] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:15:09] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:15:09] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:16:45] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:16:45] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:16:45] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:18:42] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:18:42] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:18:42] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:20:27] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:20:27] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:20:27] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:21:45] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:21:45] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:21:45] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:23:41] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:23:41] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:23:41] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:24:59] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:24:59] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:25:00] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:26:17] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:26:17] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:26:17] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:27:31] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:27:31] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:27:31] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:32:16] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:32:16] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:32:16] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:32:55] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:32:55] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:32:56] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 16:33:39] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:33:40] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:33:40] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 16:34:09] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:34:09] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:34:09] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 16:34:28] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:34:28] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:34:28] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 16:43:00] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:43:00] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:43:00] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 16:46:35] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:46:35] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:46:35] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 16:58:20] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 16:58:21] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 16:58:21] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:00:33] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:00:34] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:00:34] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:03:20] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:03:21] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:03:21] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:04:53] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:04:53] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:04:53] "POST /validate/validate HTTP/1.1" 200 193
+Not Found: /
+[24/Feb/2023 17:06:55] "GET / HTTP/1.0" 404 2956
+[24/Feb/2023 17:06:57] code 400, message Bad HTTP/0.9 request type ('l\x00')
+[24/Feb/2023 17:06:57] "l          " 400 -
+Not Found: /nice ports,/Trinity.txt.bak
+[24/Feb/2023 17:06:57] "GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0" 404 3057
+[24/Feb/2023 17:06:58] code 400, message Bad request syntax ('\x05\x04\x00\x01\x02\x80\x05\x01\x00\x03')
+[24/Feb/2023 17:06:58] "  " 400 -
+[24/Feb/2023 17:07:00] code 400, message Bad request syntax ('\x04\x01\x00\x16\x7f\x00\x00\x01root\x00')
+[24/Feb/2023 17:07:00] "   root " 400 -
+[24/Feb/2023 17:07:00,294] - Broken pipe from ('165.22.160.11', 40964)
+[24/Feb/2023 17:07:00] code 400, message Bad request syntax ('#ST')
+[24/Feb/2023 17:07:00] "#ST" 400 -
+[24/Feb/2023 17:07:02] code 400, message Bad HTTP/0.9 request type ('\x00')
+[24/Feb/2023 17:07:02] " n    beio" 400 -
+[24/Feb/2023 17:07:02,452] - Broken pipe from ('165.22.160.11', 40984)
+[24/Feb/2023 17:07:04] code 400, message Bad request syntax ('\x00\x00\x07\x00\x08\x00\x03\x00\x04\x00\x05\x00\x06')
+[24/Feb/2023 17:07:04] "       " 400 -
+[24/Feb/2023 17:07:04,101] - Broken pipe from ('165.22.160.11', 40996)
+Not Found: /
+[24/Feb/2023 17:07:04] "OPTIONS / HTTP/1.0" 404 2960
+[24/Feb/2023 17:07:04] code 400, message Bad request version ('RTSP/1.0')
+[24/Feb/2023 17:07:04] "OPTIONS / RTSP/1.0" 400 -
+[24/Feb/2023 17:07:06] code 400, message Bad request version ('\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[24/Feb/2023 17:07:06] "  (rþ          |                    " 400 -
+[24/Feb/2023 17:07:06,481] - Broken pipe from ('165.22.160.11', 35552)
+[24/Feb/2023 17:07:08] code 400, message Bad HTTP/0.9 request type ('\x00')
+[24/Feb/2023 17:07:08] "          versionbind   " 400 -
+[24/Feb/2023 17:07:08,132] - Broken pipe from ('165.22.160.11', 35554)
+[24/Feb/2023 17:07:09] code 400, message Bad HTTP/0.9 request type ('\x00')
+[24/Feb/2023 17:07:09] "            " 400 -
+[24/Feb/2023 17:07:09,775] - Broken pipe from ('165.22.160.11', 35558)
+[24/Feb/2023 17:07:09] code 400, message Bad request syntax ('HELP')
+[24/Feb/2023 17:07:09] "HELP" 400 -
+[24/Feb/2023 17:07:10] code 400, message Bad request syntax ('\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G×÷º,îê²`~ó\x00ý\x82{¹Õ\x96Èw\x9bæÄÛ<=Ûoï\x10n\x00\x00(\x00\x16\x00\x13\x00')
+[24/Feb/2023 17:07:10] You're accessing the development server over HTTPS, but it only supports HTTP.
+[24/Feb/2023 17:07:10] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+[24/Feb/2023 17:07:10] "  *%à     Cookie: mstshash=beio" 400 -
+[24/Feb/2023 17:07:10] code 400, message Bad request version ('\x00/\x00')
+[24/Feb/2023 17:07:10] You're accessing the development server over HTTPS, but it only supports HTTP.
+[24/Feb/2023 17:07:11] code 400, message Bad request syntax ('\x00\x00\x00qj\x81n0\x81k¡\x03\x02\x01\x05¢\x03\x02\x01')
+[24/Feb/2023 17:07:11] "   qjn0k¡¢" 400 -
+[24/Feb/2023 17:07:12] code 400, message Bad request version ('0.12\x00')
+[24/Feb/2023 17:07:12] "   ¤ÿSMBr    @              @     PC NETWORK PROGRAM 1.0 MICROSOFT NETWORKS 1.03 MICROSOFT NETWORKS 3.0 LANMAN1.0 LM1.2X002 Samba NT LANMAN 1.0 NT LM 0.12 " 400 -
+[24/Feb/2023 17:07:12,999] - Broken pipe from ('165.22.160.11', 35628)
+[24/Feb/2023 17:07:13] code 400, message Bad request syntax ('\x01default')
+[24/Feb/2023 17:07:13] "default" 400 -
+[24/Feb/2023 17:07:13] code 400, message Bad request syntax ('0\x84\x00\x00\x00-\x02\x01\x07c\x84\x00\x00\x00$\x04\x00')
+[24/Feb/2023 17:07:13] "0   -c   $ " 400 -
+[24/Feb/2023 17:07:15] code 400, message Bad HTTP/0.9 request type ('0')
+[24/Feb/2023 17:07:15] "0`  " 400 -
+[24/Feb/2023 17:07:15,237] - Broken pipe from ('165.22.160.11', 35646)
+[24/Feb/2023 17:07:15] code 400, message Bad request version ('SIP/2.0')
+[24/Feb/2023 17:07:15] "OPTIONS sip:nm SIP/2.0" 400 -
+[24/Feb/2023 17:07:17] code 400, message Bad request syntax ('TNMP\x04\x00\x00\x00TNME\x00\x00\x04\x00')
+[24/Feb/2023 17:07:17] "TNMP   TNME   " 400 -
+[24/Feb/2023 17:07:17,189] - Broken pipe from ('165.22.160.11', 37736)
+[24/Feb/2023 17:07:18] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00')
+[24/Feb/2023 17:07:18] "  à     " 400 -
+[24/Feb/2023 17:07:18,834] - Broken pipe from ('165.22.160.11', 37746)
+[24/Feb/2023 17:07:20] code 400, message Bad request syntax ('DmdT\x00\x00\x00\x17\x00\x00\x00\x01\x00\x00\x00\x00\x11\x11\x00ÿ\x01ÿ\x13')
+[24/Feb/2023 17:07:20] "DmdT           ÿÿ" 400 -
+[24/Feb/2023 17:07:20,485] - Broken pipe from ('165.22.160.11', 37758)
+[24/Feb/2023 17:07:22] code 400, message Bad HTTP/0.9 request type (':\x00\x00\x00/\x00\x00\x00\x02\x00\x00@\x02\x0f\x00\x01\x00=\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/\x00\x00\x00\x00\x00\x00\x00\x00\x00@')
+[24/Feb/2023 17:07:22] ":   /     @  =            /         @                 " 400 -
+[24/Feb/2023 17:07:23] code 400, message Bad request syntax ('JRMI\x00\x02K')
+[24/Feb/2023 17:07:23] "JRMI K" 400 -
+[24/Feb/2023 17:07:23,809] - Broken pipe from ('165.22.160.11', 37774)
+[24/Feb/2023 17:07:25] code 400, message Bad request version ('\x00{\x00\x00\x00\x00\x00A\x00A\x00\x00\x00-\x00\x00A\x00\x00\x00-\x00\x00\x00a\x00\x00-\x00A\x00A\x00\x00A\x00-\x00\x00\x00\x00\x00A\x00\x00A\x00A\x00\x00A\x00A\x00\x00}\x00\x00\x00àmß_')
+[24/Feb/2023 17:07:25] "  ýÎú°    MMS                    ðððð    N S P l a y e r / 9 .  .  . 9 8  ;   {     A A   -  A   -   a  - A A  A -     A  A A  A A  }   àmß_" 400 -
+[24/Feb/2023 17:07:25,465] - Broken pipe from ('165.22.160.11', 55126)
+[24/Feb/2023 17:07:27] code 400, message Bad HTTP/0.9 request type ('\x00Z\x00\x00\x01\x00\x00\x00\x016\x01,\x00\x00\x08\x00\x7fÿ\x7f\x08\x00\x00\x00\x01\x00')
+[24/Feb/2023 17:07:27] " Z     6,   ÿ      :               æ           (CONNECT_DATA=(COMMAND=version))" 400 -
+[24/Feb/2023 17:07:27,120] - Broken pipe from ('165.22.160.11', 55140)
+[24/Feb/2023 17:07:28] code 400, message Bad request version ('\x03\x00(\x00\x04ÿ\x08\x00\x01U\x00\x00\x00MSSQLServer\x00H\x0f\x00\x00')
+[24/Feb/2023 17:07:28] " 4            ( ÿ U   MSSQLServer H  " 400 -
+[24/Feb/2023 17:07:28,761] - Broken pipe from ('165.22.160.11', 55148)
+[24/Feb/2023 17:07:30] code 400, message Bad request syntax ('\x00\x03\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x0f\x00')
+[24/Feb/2023 17:07:30] "              " 400 -
+[24/Feb/2023 17:07:30,405] - Broken pipe from ('165.22.160.11', 55164)
+[24/Feb/2023 17:07:32] code 400, message Bad request syntax ('GIOP\x01\x00\x01\x00$\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x06\x00\x00\x00abcdef\x00\x00\x04\x00\x00\x00get\x00\x00\x00\x00\x00')
+[24/Feb/2023 17:07:32] "GIOP  $                abcdef     get     " 400 -
+[24/Feb/2023 17:07:32,048] - Broken pipe from ('165.22.160.11', 55170)
+[24/Feb/2023 17:07:33] code 400, message Bad request syntax ('\x00\x9c\x00\x01\x1a+<M\x00\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01ÿÿ\x00\x01none\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00beio\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[24/Feb/2023 17:07:33] "  +<M            ÿÿ none                                                            beio                                                            " 400 -
+[24/Feb/2023 17:07:33,711] - Broken pipe from ('165.22.160.11', 55174)
+[24/Feb/2023 17:07:35] code 400, message Bad request syntax ('\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x04\x00\x00\x00\x08\x00\x00\x00\x01\x00\x00\x00\x00')
+[24/Feb/2023 17:07:35] "                   " 400 -
+[24/Feb/2023 17:07:35,352] - Broken pipe from ('165.22.160.11', 57898)
+[24/Feb/2023 17:07:37] code 400, message Bad request syntax ('\x03\x81\x00\x00\x00\x00\x00_@\x00\x017\x00\x00\x00\x00\x00\x00\x00\x01\x00\x01\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00InitiatorName=iqn.1991-05.com.microsoft:beio-iscsi-probe\x00SessionType=Discovery\x00AuthMethod=None\x00\x00')
+[24/Feb/2023 17:07:37] "     _@ 7                                InitiatorName=iqn.1991-05.com.microsoft:beio-iscsi-probe SessionType=Discovery AuthMethod=None  " 400 -
+[24/Feb/2023 17:07:37,003] - Broken pipe from ('165.22.160.11', 57900)
+[24/Feb/2023 17:07:38] code 400, message Bad request version ('CharruaVista')
+[24/Feb/2023 17:07:38] "    Í   ANY-SCP         FINDSCU                                           1.2.840.10008.3.1.1.1   .   0  1.2.840.10008.1.1@  1.2.840.10008.1.2P  :Q    @ R  1.2.826.0.1.3680043.2.1396.999U  CharruaVista" 400 -
+[24/Feb/2023 17:07:38,653] - Broken pipe from ('165.22.160.11', 57916)
+[24/Feb/2023 17:07:38] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+[24/Feb/2023 17:07:38] "  ,'à     Cookie: mstshash=Administrator" 400 -
+[24/Feb/2023 17:07:40] code 400, message Bad request syntax ('\x00\x00\x00\x00\x00')
+[24/Feb/2023 17:07:40] "     " 400 -
+[24/Feb/2023 17:07:40,600] - Broken pipe from ('165.22.160.11', 57934)
+[24/Feb/2023 17:07:40] code 400, message Bad request syntax ('\x01I20100')
+[24/Feb/2023 17:07:40] "I20100" 400 -
+[24/Feb/2023 17:10:30] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:10:30] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:10:30] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:15:08] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:15:08] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:15:08] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:16:12] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:16:12] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:16:13] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:17:21] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:17:21] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:17:21] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:17:53] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:17:53] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:17:53] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:18:12] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:18:12] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:18:12] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:18:55] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:18:55] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:18:55] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:21:08] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:21:09] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:21:09] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:24:08] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:24:08] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:24:09] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 17:24:57] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:24:58] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:25:01] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 17:25:43] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:25:43] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:25:44] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:26:26] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:26:27] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:26:29] "POST /validate/validate HTTP/1.1" 200 218
+[24/Feb/2023 17:30:55] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:30:56] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:30:56] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:34:42] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:34:43] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:34:43] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:36:57] "GET /version HTTP/1.1" 301 0
+[24/Feb/2023 17:36:58] "GET /version/ HTTP/1.1" 200 3
+[24/Feb/2023 17:36:58] "POST /validate/validate HTTP/1.1" 200 193
+[24/Feb/2023 17:46:55] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[24/Feb/2023 17:46:55] "    c                           " 400 -
+[24/Feb/2023 18:41:17] code 400, message Bad request version ('À\x14À')
+[24/Feb/2023 18:41:17] You're accessing the development server over HTTPS, but it only supports HTTP.
+[24/Feb/2023 18:41:17] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03¹v·ÑÜzd²*Æÿä³¾\x17jP´q')
+[24/Feb/2023 18:41:17] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[24/Feb/2023 18:41:17] "GET / HTTP/1.1" 404 2927
+[24/Feb/2023 18:41:17] code 400, message Bad request version ('À\x14À')
+[24/Feb/2023 18:41:17] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /api/islogged
+[24/Feb/2023 18:41:17] "GET /api/islogged HTTP/1.1" 404 2981
+Not Found: /
+[24/Feb/2023 20:52:49] "GET / HTTP/1.1" 404 2922
+Not Found: /favicon.ico
+[24/Feb/2023 20:52:50] "GET /favicon.ico HTTP/1.1" 404 2978
+[24/Feb/2023 20:53:04] code 400, message Bad request syntax ('\x03£#ùc\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[24/Feb/2023 20:53:04] "£#ùc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            " 400 -
+[24/Feb/2023 22:46:17,073] - Broken pipe from ('167.94.145.57', 35106)
+Not Found: /
+[24/Feb/2023 22:46:18] "GET / HTTP/1.1" 404 2927
+[24/Feb/2023 22:46:18,112] - Broken pipe from ('167.94.145.57', 40266)
+Not Found: /
+[24/Feb/2023 22:46:18] "GET / HTTP/1.1" 404 2927
+[24/Feb/2023 22:46:18] code 505, message Invalid HTTP version (2.0)
+[24/Feb/2023 22:46:18] "PRI * HTTP/2.0" 505 -
+Not Found: /
+[24/Feb/2023 23:20:16] "GET / HTTP/1.1" 404 2927
+[25/Feb/2023 00:00:40] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:00:40] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:00:40] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:05:22] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:05:22] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:05:22] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:06:23] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:06:23] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:06:23] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:11:49] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:11:49] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:11:49] "POST /validate/validate HTTP/1.1" 200 218
+[25/Feb/2023 00:23:56] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:23:56] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:23:56] "POST /validate/validate HTTP/1.1" 200 218
+[25/Feb/2023 00:25:42] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:25:43] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:25:43] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:25:52] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:25:53] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:25:53] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:26:54] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:26:54] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:26:54] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:27:25] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:27:25] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:27:25] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:27:45] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:27:45] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:27:45] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:28:11] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:28:11] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:28:11] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:28:21] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:28:21] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:28:21] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:29:25] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:29:25] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:29:25] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:31:04] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:31:04] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:31:04] "POST /validate/validate HTTP/1.1" 200 193
+[25/Feb/2023 00:37:34] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:37:34] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:37:34] "POST /validate/validate HTTP/1.1" 200 218
+[25/Feb/2023 00:38:06] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:38:06] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:38:06] "POST /validate/validate HTTP/1.1" 200 218
+[25/Feb/2023 00:38:52] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 00:38:52] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 00:38:52] "POST /validate/validate HTTP/1.1" 200 218
+[25/Feb/2023 01:56:33] code 400, message Bad request version ('À\x14À')
+[25/Feb/2023 01:56:33] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[25/Feb/2023 06:21:26] "GET / HTTP/1.1" 404 2927
+Not Found: /http:/api.ipify.org/
+[25/Feb/2023 06:22:20] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1818
+Not Found: /www.shadowserver.org:443
+[25/Feb/2023 06:22:43] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1827
+Not Found: /
+[25/Feb/2023 06:41:31] "GET / HTTP/1.1" 404 2927
+[25/Feb/2023 07:32:05,813] - Broken pipe from ('167.248.133.44', 58110)
+Not Found: /
+[25/Feb/2023 07:32:06] "GET / HTTP/1.1" 404 2927
+[25/Feb/2023 07:32:07,013] - Broken pipe from ('167.248.133.44', 47894)
+Not Found: /
+[25/Feb/2023 07:32:07] "GET / HTTP/1.1" 404 2927
+[25/Feb/2023 07:32:07] code 505, message Invalid HTTP version (2.0)
+[25/Feb/2023 07:32:07] "PRI * HTTP/2.0" 505 -
+[25/Feb/2023 10:17:49] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 10:17:49] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 10:17:49] "POST /validate/validate HTTP/1.1" 200 218
+[25/Feb/2023 11:02:57] "GET /version HTTP/1.1" 301 0
+[25/Feb/2023 11:02:57] "GET /version/ HTTP/1.1" 200 3
+[25/Feb/2023 11:02:57] "POST /validate/validate HTTP/1.1" 200 218
+[25/Feb/2023 15:12:16] code 400, message Bad request syntax ('MGLNDD_13.42.103.118_8000')
+[25/Feb/2023 15:12:16] "MGLNDD_13.42.103.118_8000" 400 -
+Not Found: /
+[25/Feb/2023 16:27:36] "GET / HTTP/1.0" 404 2956
+[25/Feb/2023 16:27:41] code 400, message Bad HTTP/0.9 request type ('l\x00')
+[25/Feb/2023 16:27:41] "l          " 400 -
+Not Found: /nice ports,/Trinity.txt.bak
+[25/Feb/2023 16:27:41] "GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0" 404 3057
+[25/Feb/2023 16:27:41] code 400, message Bad request syntax ('\x05\x04\x00\x01\x02\x80\x05\x01\x00\x03')
+[25/Feb/2023 16:27:41] "  " 400 -
+[25/Feb/2023 16:27:46] code 400, message Bad request syntax ('\x04\x01\x00\x16\x7f\x00\x00\x01root\x00')
+[25/Feb/2023 16:27:46] "   root " 400 -
+Not Found: /
+[25/Feb/2023 16:27:46] "OPTIONS / HTTP/1.0" 404 2960
+[25/Feb/2023 16:27:47] code 400, message Bad request version ('RTSP/1.0')
+[25/Feb/2023 16:27:47] "OPTIONS / RTSP/1.0" 400 -
+[25/Feb/2023 16:27:52] code 400, message Bad request version ('\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[25/Feb/2023 16:27:52] "  (rþ          |                    " 400 -
+[25/Feb/2023 16:27:57] code 400, message Bad HTTP/0.9 request type ('\x00')
+[25/Feb/2023 16:27:57] "          versionbind   " 400 -
+[25/Feb/2023 16:27:57] code 400, message Bad request syntax ('HELP')
+[25/Feb/2023 16:27:57] "HELP" 400 -
+[25/Feb/2023 16:27:57] code 400, message Bad request syntax ('\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G×÷º,îê²`~ó\x00ý\x82{¹Õ\x96Èw\x9bæÄÛ<=Ûoï\x10n\x00\x00(\x00\x16\x00\x13\x00')
+[25/Feb/2023 16:27:57] You're accessing the development server over HTTPS, but it only supports HTTP.
+[25/Feb/2023 16:27:57] code 400, message Bad request version ('\x00/\x00')
+[25/Feb/2023 16:27:57] You're accessing the development server over HTTPS, but it only supports HTTP.
+[25/Feb/2023 16:27:57] code 400, message Bad request syntax ('\x00\x00\x00qj\x81n0\x81k¡\x03\x02\x01\x05¢\x03\x02\x01')
+[25/Feb/2023 16:27:57] "   qjn0k¡¢" 400 -
+[25/Feb/2023 16:28:02] code 400, message Bad request version ('0.12\x00')
+[25/Feb/2023 16:28:02] "   ¤ÿSMBr    @              @     PC NETWORK PROGRAM 1.0 MICROSOFT NETWORKS 1.03 MICROSOFT NETWORKS 3.0 LANMAN1.0 LM1.2X002 Samba NT LANMAN 1.0 NT LM 0.12 " 400 -
+[25/Feb/2023 16:28:02] code 400, message Bad request version ('SIP/2.0')
+[25/Feb/2023 16:28:02] "OPTIONS sip:nm SIP/2.0" 400 -
+Not Found: /server-status
+[25/Feb/2023 16:28:02] "GET /server-status HTTP/1.1" 404 3020
+[25/Feb/2023 16:28:02] code 400, message Bad request version ('\x00/\x00')
+[25/Feb/2023 16:28:02] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /Portal/Portal.mwsl
+[25/Feb/2023 16:28:02] "GET /Portal/Portal.mwsl HTTP/1.1" 404 3035
+Not Found: /
+[25/Feb/2023 16:28:02] "GET / HTTP/1.1" 404 2963
+Not Found: /Portal0000.htm
+[25/Feb/2023 16:28:02] "GET /Portal0000.htm HTTP/1.1" 404 3023
+Not Found: /
+Not Found: /.git/HEAD
+Not Found: /docs/cplugError.html/
+[25/Feb/2023 16:28:02] "GET /docs/cplugError.html/ HTTP/1.1" 404 3044
+[25/Feb/2023 16:28:02] "GET / HTTP/1.1" 404 2963
+[25/Feb/2023 16:28:02] "GET /.git/HEAD HTTP/1.1" 404 3008
+Not Found: /__Additional
+[25/Feb/2023 16:28:02] "GET /__Additional HTTP/1.1" 404 3017
+Not Found: /indice.html
+[25/Feb/2023 16:28:02] "GET /indice.html HTTP/1.1" 404 3014
+Not Found: /favicon.ico
+[25/Feb/2023 16:28:02] "GET /favicon.ico HTTP/1.1" 404 3014
+Not Found: /WoJL
+[25/Feb/2023 16:28:02] "GET /WoJL HTTP/1.1" 404 2993
+Not Found: /admin.asp
+[25/Feb/2023 16:28:02] "GET /admin.asp HTTP/1.1" 404 3008
+Not Found: /home.php
+[25/Feb/2023 16:28:02] "GET /home.php HTTP/1.1" 404 3005
+Not Found: /base.cfm
+[25/Feb/2023 16:28:02] "GET /base.cfm HTTP/1.1" 404 3005
+Not Found: /localstart.pl
+[25/Feb/2023 16:28:03] "GET /localstart.pl HTTP/1.1" 404 3020
+Not Found: /http:/www.google.com
+[25/Feb/2023 16:28:03] "GET http://www.google.com HTTP/1.0" 404 1807
+Not Found: /admin.shtml
+[25/Feb/2023 16:28:03] "GET /admin.shtml HTTP/1.1" 404 3014
+Not Found: /
+[25/Feb/2023 16:28:03] "GET /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42 HTTP/1.1" 404 3004
+Not Found: /indice.php
+Not Found: /CSS/Miniweb.css
+[25/Feb/2023 16:28:03] "GET /CSS/Miniweb.css HTTP/1.1" 404 3026
+Not Found: /http:/www.google.com
+[25/Feb/2023 16:28:03] "GET /indice.php HTTP/1.1" 404 3011
+[25/Feb/2023 16:28:03] "HEAD http://www.google.com HTTP/1.0" 404 1808
+Not Found: /sdk
+Not Found: /
+[25/Feb/2023 16:28:03] "GET /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000 HTTP/1.1" 404 3004
+[25/Feb/2023 16:28:03] "POST /sdk HTTP/1.1" 404 2991
+Not Found: /nmaplowercheck1677342482
+[25/Feb/2023 16:28:03] "GET /nmaplowercheck1677342482 HTTP/1.1" 404 3053
+Not Found: /main.pl
+[25/Feb/2023 16:28:03] "GET /main.pl HTTP/1.1" 404 3002
+Not Found: /www.google.com:80
+[25/Feb/2023 16:28:03] "CONNECT www.google.com:80 HTTP/1.0" 404 1833
+Not Found: /HNAP1
+[25/Feb/2023 16:28:03] "GET /HNAP1 HTTP/1.1" 404 2996
+Not Found: /default.asp
+[25/Feb/2023 16:28:03] "GET default.asp HTTP/1.1" 404 1818
+Not Found: /home.cgi
+[25/Feb/2023 16:28:03] "GET /home.cgi HTTP/1.1" 404 3005
+Not Found: /start.php
+[25/Feb/2023 16:28:04] "GET /start.php HTTP/1.1" 404 3008
+Not Found: /default.shtml
+[25/Feb/2023 16:28:04] "GET /default.shtml HTTP/1.1" 404 3020
+Not Found: /index.html
+[25/Feb/2023 16:28:04] "GET /index.html HTTP/1.1" 404 3011
+Not Found: /main.jsa
+[25/Feb/2023 16:28:04] "GET /main.jsa HTTP/1.1" 404 3005
+Not Found: /index.php
+[25/Feb/2023 16:28:04] "GET /index.php HTTP/1.1" 404 3008
+Not Found: /robots.txt
+[25/Feb/2023 16:28:04] "GET /robots.txt HTTP/1.1" 404 3011
+Not Found: /index.cfm
+[25/Feb/2023 16:28:04] "GET /index.cfm HTTP/1.1" 404 3008
+Not Found: /start.jsa
+[25/Feb/2023 16:28:05] "GET /start.jsa HTTP/1.1" 404 3008
+Not Found: /default.jsa
+[25/Feb/2023 16:28:05] "GET /default.jsa HTTP/1.1" 404 3014
+Not Found: /readme.txt
+[25/Feb/2023 16:28:05] "GET /readme.txt HTTP/1.1" 404 3011
+Not Found: /admin.pl
+[25/Feb/2023 16:28:05] "GET /admin.pl HTTP/1.1" 404 3005
+Not Found: /admin.jhtml
+[25/Feb/2023 16:28:05] "GET /admin.jhtml HTTP/1.1" 404 3014
+Not Found: /admin.jsp
+[25/Feb/2023 16:28:05] "GET /admin.jsp HTTP/1.1" 404 3008
+Not Found: /admin.jsa
+[25/Feb/2023 16:28:06] "GET /admin.jsa HTTP/1.1" 404 3008
+Not Found: /main.cfm
+[25/Feb/2023 16:28:06] "GET /main.cfm HTTP/1.1" 404 3005
+Not Found: /admin.php
+[25/Feb/2023 16:28:06] "GET /admin.php HTTP/1.1" 404 3008
+Not Found: /indice.jhtml
+[25/Feb/2023 16:28:06] "GET /indice.jhtml HTTP/1.1" 404 3017
+Not Found: /home.jsa
+[25/Feb/2023 16:28:06] "GET /home.jsa HTTP/1.1" 404 3005
+Not Found: /indice.cgi
+[25/Feb/2023 16:28:06] "GET /indice.cgi HTTP/1.1" 404 3011
+Not Found: /default.jhtml
+[25/Feb/2023 16:28:07] "GET /default.jhtml HTTP/1.1" 404 3020
+Not Found: /
+[25/Feb/2023 16:28:07] "GET / HTTP/1.1" 404 2912
+Not Found: /home.asp
+[25/Feb/2023 16:28:07] "GET /home.asp HTTP/1.1" 404 3005
+Not Found: /inicio.cgi
+[25/Feb/2023 16:28:07] "GET /inicio.cgi HTTP/1.1" 404 3011
+Not Found: /admin.html
+[25/Feb/2023 16:28:07] "GET /admin.html HTTP/1.1" 404 3011
+Not Found: /admin.cgi
+[25/Feb/2023 16:28:07] "GET /admin.cgi HTTP/1.1" 404 3008
+Not Found: /inicio.cfm
+[25/Feb/2023 16:28:07] "GET /inicio.cfm HTTP/1.1" 404 3011
+Not Found: /menu.aspx
+[25/Feb/2023 16:28:08] "GET /menu.aspx HTTP/1.1" 404 3008
+Not Found: /admin.aspx
+[25/Feb/2023 16:28:08] "GET /admin.aspx HTTP/1.1" 404 3011
+Not Found: /index.shtml
+[25/Feb/2023 16:28:08] "GET /index.shtml HTTP/1.1" 404 3014
+Not Found: /home.jhtml
+[25/Feb/2023 16:28:08] "GET /home.jhtml HTTP/1.1" 404 3011
+Not Found: /default.php
+[25/Feb/2023 16:28:08] "GET /default.php HTTP/1.1" 404 3014
+Not Found: /base.shtml
+[25/Feb/2023 16:28:08] "GET /base.shtml HTTP/1.1" 404 3011
+Not Found: /start.cfm
+[25/Feb/2023 16:28:09] "GET /start.cfm HTTP/1.1" 404 3008
+Not Found: /home.pl
+[25/Feb/2023 16:28:09] "GET /home.pl HTTP/1.1" 404 3002
+Not Found: /home.cfm
+[25/Feb/2023 16:28:09] "GET /home.cfm HTTP/1.1" 404 3005
+Not Found: /base.pl
+[25/Feb/2023 16:28:09] "GET /base.pl HTTP/1.1" 404 3002
+Not Found: /menu.cfm
+[25/Feb/2023 16:28:09] "GET /menu.cfm HTTP/1.1" 404 3005
+Not Found: /inicio.html
+[25/Feb/2023 16:28:09] "GET /inicio.html HTTP/1.1" 404 3014
+Not Found: /index.cgi
+[25/Feb/2023 16:28:10] "GET /index.cgi HTTP/1.1" 404 3008
+Not Found: /home.shtml
+[25/Feb/2023 16:28:10] "GET /home.shtml HTTP/1.1" 404 3011
+Not Found: /inicio.php
+[25/Feb/2023 16:28:10] "GET /inicio.php HTTP/1.1" 404 3011
+Not Found: /indice.asp
+[25/Feb/2023 16:28:10] "GET /indice.asp HTTP/1.1" 404 3011
+Not Found: /base.jhtml
+[25/Feb/2023 16:28:10] "GET /base.jhtml HTTP/1.1" 404 3011
+Not Found: /base.jsp
+[25/Feb/2023 16:28:10] "GET /base.jsp HTTP/1.1" 404 3005
+Not Found: /base.jsa
+[25/Feb/2023 16:28:11] "GET /base.jsa HTTP/1.1" 404 3005
+Not Found: /base.php
+[25/Feb/2023 16:28:11] "GET /base.php HTTP/1.1" 404 3005
+Not Found: /main.asp
+[25/Feb/2023 16:28:11] "GET /main.asp HTTP/1.1" 404 3005
+Not Found: /localstart.jsp
+[25/Feb/2023 16:28:11] "GET /localstart.jsp HTTP/1.1" 404 3023
+Not Found: /indice.aspx
+[25/Feb/2023 16:28:11] "GET /indice.aspx HTTP/1.1" 404 3014
+Not Found: /main.cgi
+[25/Feb/2023 16:28:11] "GET /main.cgi HTTP/1.1" 404 3005
+Not Found: /localstart.cgi
+[25/Feb/2023 16:28:12] "GET /localstart.cgi HTTP/1.1" 404 3023
+Not Found: /menu.html
+[25/Feb/2023 16:28:12] "GET /menu.html HTTP/1.1" 404 3008
+Not Found: /localstart.shtml
+[25/Feb/2023 16:28:12] "GET /localstart.shtml HTTP/1.1" 404 3029
+Not Found: /start.html
+[25/Feb/2023 16:28:12] "GET /start.html HTTP/1.1" 404 3011
+Not Found: /start.aspx
+[25/Feb/2023 16:28:12] "GET /start.aspx HTTP/1.1" 404 3011
+Not Found: /base.aspx
+[25/Feb/2023 16:28:13] "GET /base.aspx HTTP/1.1" 404 3008
+Not Found: /indice.jsa
+[25/Feb/2023 16:28:13] "GET /indice.jsa HTTP/1.1" 404 3011
+Not Found: /indice.shtml
+[25/Feb/2023 16:28:13] "GET /indice.shtml HTTP/1.1" 404 3017
+[25/Feb/2023 16:28:13] code 400, message Bad request syntax ('\x0e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbbb0100000001')
+[25/Feb/2023 16:28:13] "               bbbb0100000001" 400 -
+Not Found: /index.aspx
+[25/Feb/2023 16:28:13] "GET /index.aspx HTTP/1.1" 404 3011
+Not Found: /default.cfm
+[25/Feb/2023 16:28:13] "GET /default.cfm HTTP/1.1" 404 3014
+Not Found: /menu.jsa
+[25/Feb/2023 16:28:13] "GET /menu.jsa HTTP/1.1" 404 3005
+Not Found: /main.aspx
+[25/Feb/2023 16:28:13] "GET /main.aspx HTTP/1.1" 404 3008
+Not Found: /indice.jsp
+[25/Feb/2023 16:28:13] "GET /indice.jsp HTTP/1.1" 404 3011
+Not Found: /
+[25/Feb/2023 16:28:16] "GET / HTTP/1.1" 404 2958
+[25/Feb/2023 16:28:16,734] - Broken pipe from ('109.74.204.123', 40834)
+[25/Feb/2023 17:31:42] code 400, message Bad request syntax ('SSH-2.0-libssh2_1.10.0')
+[25/Feb/2023 17:31:42] "SSH-2.0-libssh2_1.10.0" 400 -
+[25/Feb/2023 17:55:37,814] - Broken pipe from ('167.248.133.117', 45708)
+Not Found: /
+[25/Feb/2023 17:55:38] "GET / HTTP/1.1" 404 2927
+[25/Feb/2023 17:55:39,023] - Broken pipe from ('167.248.133.117', 48298)
+Not Found: /
+[25/Feb/2023 17:55:39] "GET / HTTP/1.1" 404 2927
+[25/Feb/2023 17:55:39] code 505, message Invalid HTTP version (2.0)
+[25/Feb/2023 17:55:39] "PRI * HTTP/2.0" 505 -
+[25/Feb/2023 18:00:01] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00u\x01\x00\x00q\x03\x03KØ\x08\x98k¥Éw0¯"\x8f*ä).\x9ci\x0f\x17WÛ\x07~<KÞç\x99Ë>K\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[25/Feb/2023 18:00:01] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /c/
+[25/Feb/2023 23:12:50] "GET /c/ HTTP/1.1" 404 2951
+[26/Feb/2023 01:19:15] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03è¯¢§ª\x90»ùÒ«ñ\x9a\x17:ðãõß7:ølàÐ\x98Â#\x86N\x9cV¬\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[26/Feb/2023 01:19:15] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Feb/2023 01:19:15] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03#\x9f<J9iW½üe\x08\x8døFE°O\x90¥\x8d\x8d;o|t:\x0eBMºDÄ\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[26/Feb/2023 01:19:15] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[26/Feb/2023 01:19:15] "GET / HTTP/1.1" 404 2927
+[26/Feb/2023 01:19:15] code 400, message Bad request version ('À\x14À')
+[26/Feb/2023 01:19:15] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /api/islogged
+[26/Feb/2023 01:19:15] "GET /api/islogged HTTP/1.1" 404 2981
+Not Found: /
+[26/Feb/2023 01:57:26] "GET / HTTP/1.1" 404 2927
+[26/Feb/2023 10:03:17,479] - Broken pipe from ('167.94.138.46', 54374)
+Not Found: /
+[26/Feb/2023 10:03:18] "GET / HTTP/1.1" 404 2927
+[26/Feb/2023 10:03:18,680] - Broken pipe from ('167.94.138.46', 55030)
+Not Found: /
+[26/Feb/2023 10:03:18] "GET / HTTP/1.1" 404 2927
+[26/Feb/2023 10:03:19] code 505, message Invalid HTTP version (2.0)
+[26/Feb/2023 10:03:19] "PRI * HTTP/2.0" 505 -
+Not Found: /
+[26/Feb/2023 10:08:48] "GET / HTTP/1.1" 404 2927
+[26/Feb/2023 10:50:05] "GET /version HTTP/1.1" 301 0
+[26/Feb/2023 10:50:05] "GET /version/ HTTP/1.1" 200 3
+[26/Feb/2023 10:50:06] "POST /validate/validate HTTP/1.1" 200 218
+Not Found: /
+[26/Feb/2023 11:48:31] "GET / HTTP/1.1" 404 2927
+Not Found: /http:/api.ipify.org/
+[26/Feb/2023 11:49:37] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1818
+Not Found: /www.shadowserver.org:443
+[26/Feb/2023 11:50:00] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1827
+[26/Feb/2023 11:51:29] code 400, message Bad request version ('À\x14À')
+[26/Feb/2023 11:51:29] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Feb/2023 12:18:06] "GET /version HTTP/1.1" 301 0
+[26/Feb/2023 12:18:06] "GET /version/ HTTP/1.1" 200 3
+[26/Feb/2023 12:18:06] "POST /validate/validate HTTP/1.1" 200 218
+Not Found: /
+[26/Feb/2023 13:59:29] "GET / HTTP/1.1" 404 2927
+[26/Feb/2023 19:00:26] code 400, message Bad request syntax ('MGLNDD_13.42.103.118_8000')
+[26/Feb/2023 19:00:26] "MGLNDD_13.42.103.118_8000" 400 -
+Not Found: /
+[26/Feb/2023 19:00:56] "GET / HTTP/1.1" 404 2927
+[26/Feb/2023 20:24:57] "GET /version HTTP/1.1" 301 0
+[26/Feb/2023 20:24:57] "GET /version/ HTTP/1.1" 200 3
+[26/Feb/2023 20:24:57] "POST /validate/validate HTTP/1.1" 200 218
+[26/Feb/2023 20:25:22] "GET /version HTTP/1.1" 301 0
+[26/Feb/2023 20:25:22] "GET /version/ HTTP/1.1" 200 3
+[26/Feb/2023 20:25:22] "POST /validate/validate HTTP/1.1" 200 218
+Not Found: /
+[26/Feb/2023 21:42:43] "GET / HTTP/1.1" 404 2927
+[26/Feb/2023 22:13:39] "GET /version HTTP/1.1" 301 0
+[26/Feb/2023 22:13:39] "GET /version/ HTTP/1.1" 200 3
+[26/Feb/2023 22:13:39] "POST /validate/validate HTTP/1.1" 200 218
