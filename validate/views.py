@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import StreamingHttpResponse
 from django.shortcuts import redirect
 from .models import Validate
 import json
@@ -38,9 +39,9 @@ def val(request):
 
 
 def test(request):
-    with open('test.txt', 'wb') as f:
-        f.write(request.body)
-    return HttpResponse(request.body)
+    with open('test.txt', 'w') as f:
+        f.write("123")
+    return HttpResponse("123")
 
 
 def increase_month(d, month):
@@ -86,3 +87,19 @@ def topup(request, MerchID, BranchID, platform, months):
         obj.FT_Valid = d
         obj.save()
     return redirect("http://localhost:9528")
+
+def download(request):
+    def file_iterator(file_name, chunk_size=512):
+        with open(file_name, "rb") as f:
+            while True:
+                c = f.read(chunk_size)
+                if c:
+                    yield c
+                else:
+                    break
+
+    the_file_name = "AutoIn.exe"
+    response = StreamingHttpResponse(file_iterator(the_file_name))
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
+    return response 

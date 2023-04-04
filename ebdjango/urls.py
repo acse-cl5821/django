@@ -30,4 +30,5 @@ urlpatterns = [
     path('amazon1/', view.amazon1),
     path('amazon2/', view.amazon2),
     path('version/', view.version),
+    path('version_info/', view.version_info),
 ]
