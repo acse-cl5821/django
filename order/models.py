@@ -4,10 +4,11 @@ from django.db import models
 
 class Order(models.Model):
     TGId = models.CharField(max_length=255)
+    Merch_Id = models.CharField(max_length=255, default=None)
+    Branch_Id = models.CharField(max_length=255, default=None)
     Order_id = models.CharField(max_length=255)
     Platform = models.CharField(max_length=255)
-    Displayed_id = models.CharField(max_length=255,blank=True)
-    Current_state = models.CharField(max_length=255,blank=True)
-    Cart = models.TextField()
-    Store_id = models.IntegerField()
+    Displayed_id = models.CharField(max_length=255,default=None, blank=True, null=True)
+    Price = models.FloatField(default=None, blank=True, null=True)
     Placed_at = models.DateTimeField(blank=True)
+    Cart = models.TextField(default=None, blank=True, null=True)

@@ -38,14 +38,9 @@ def val(request):
     return HttpResponse(json.dumps(data))
 
 
-def test(request):
-    with open('test.txt', 'w') as f:
-        f.write("123")
-    return HttpResponse("123")
-
 
 def increase_month(d, month):
-    if d == None:
+    if d == None or d < dt.date.today():
         d = dt.date.today()
     month += d.month
     if month > 12:
@@ -86,7 +81,7 @@ def topup(request, MerchID, BranchID, platform, months):
         d = increase_month(d,months)
         obj.FT_Valid = d
         obj.save()
-    return redirect("http://localhost:9528")
+    return redirect("http://autoin.trinalgenius.co.uk:9528/")
 
 def download(request):
     def file_iterator(file_name, chunk_size=512):

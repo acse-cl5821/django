@@ -5,11 +5,11 @@ import requests
 
 
 def version(request):
-    version = "1.0.5"
+    version = "1.1.0"
     return HttpResponse(version)
 
 def version_info(request):
-    message = "Update Info v1.0.5:\n2023-3-17  UberEats updates their website structure, this version update our method to detect UberEats orders."
+    message = "Update Info v1.0.17:\n2023-6-30  Fixed a bug caused by Deliveroo survey.\n2023-6-30  \u4fee\u590d\u4e86\u4e00\u4e2a Deliveroo survey \u9020\u6210\u7684 bug"
     #return HttpResponse(message.encode('unicode_escape').strip())
     return HttpResponse(message)
 
